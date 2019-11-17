@@ -1,5 +1,5 @@
 import sys
-from cipher import SimpleCipher
+from lib.cipher import SimpleCipher
 
 if len(sys.argv) != 2:
     print("No input string")
