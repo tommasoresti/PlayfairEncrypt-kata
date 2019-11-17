@@ -5,5 +5,5 @@ if len(sys.argv) != 2:
     print("No input string")
     exit()
 
-print(Cipher().run(sys.argv[1]))
+print(Cipher().encode(sys.argv[1]))
 

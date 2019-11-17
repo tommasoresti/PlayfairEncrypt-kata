@@ -53,7 +53,7 @@ class Cipher:
     def same_case(self, couple):
         return couple[0] + 'X'
 
-    def run(self, input_value):
+    def encode(self, input_value):
         input_value = str.upper(input_value)
         input_value = re.sub(r'[^A-Z]+', "", input_value)
 

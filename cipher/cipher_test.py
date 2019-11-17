@@ -9,4 +9,4 @@ class TestStringMethods(TestCase):
         self.cipher = Cipher()
 
     def test_same_case(self):
-        self.assertEqual(self.cipher.run("SS"), "SX")
+        self.assertEqual(self.cipher.encode("SS"), "SX")
