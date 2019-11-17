@@ -8,8 +8,9 @@ class TestRectangle(TestCase):
 
     def setUp(self):
         self.matrix = Matrix([
-            ["B", "S"],
-            ["A", "R"]
+            ["B", "S", "W"],
+            ["A", "R", "P"],
+            ["O", "G", "L"],
         ])
 
     def test_checker(self):
@@ -17,4 +18,4 @@ class TestRectangle(TestCase):
         self.assertFalse(rectangle_checker("BS", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(rectangle_encoder("SS"), "SS")
+        self.assertEqual(rectangle_encoder("BR", self.matrix), "SA")

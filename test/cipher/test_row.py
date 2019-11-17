@@ -8,8 +8,8 @@ class TestRow(TestCase):
 
     def setUp(self):
         self.matrix = Matrix([
-            ["B", "S"],
-            ["A", "R"]
+            ["B", "S", "V"],
+            ["A", "R", "D"]
         ])
 
     def test_checker(self):
@@ -17,4 +17,4 @@ class TestRow(TestCase):
         self.assertFalse(row_checker("BA", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(row_encoder("SS"), "SS")
+        self.assertEqual(row_encoder("BS", self.matrix), "SV")

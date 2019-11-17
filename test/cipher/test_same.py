@@ -17,4 +17,4 @@ class TestSame(TestCase):
         self.assertFalse(same_checker("BA", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(same_encoder("SS"), "SX")
+        self.assertEqual(same_encoder("SS", self.matrix), "SX")

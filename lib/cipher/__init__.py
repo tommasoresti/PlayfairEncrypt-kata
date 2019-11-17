@@ -11,7 +11,6 @@ CIPHER = (["D", "A", "V", "I", "O"],
               ["T", "U", "W", "X", "Z"])
 
 SimpleCipher = Cipher(CIPHER, [
-            (same_checker, same_encoder),
             (row_checker, row_encoder),
             (column_checker, column_encoder),
             (rectangle_checker, rectangle_encoder)

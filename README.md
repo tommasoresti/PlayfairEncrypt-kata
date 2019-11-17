@@ -101,7 +101,7 @@ letters, or odd numbers of characters in decrypt.
 For example:
 
 
-encrypt("PS. Hello, world") > "QLGRQTVZIBTYQZ"
+encrypt("PS. Hello, worlds") > "QLGRQTVZIBTYQZ"
 decrypt("QLGRQTVZIBTYQZ") > "PSHELXOWORLDSX"
 
 HINT: You might find it easier if you implement some

@@ -9,7 +9,8 @@ class TestColumn(TestCase):
     def setUp(self):
         self.matrix = Matrix([
             ["B", "S"],
-            ["A", "R"]
+            ["A", "R"],
+            ["K", "P"],
         ])
 
     def test_checker(self):
@@ -17,4 +18,7 @@ class TestColumn(TestCase):
         self.assertFalse(column_checker("BR", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(column_encoder("SS"), "SS")
+        self.assertEqual(column_encoder("BA", self.matrix), "AK")
+
+    def test_encoder_wrapping(self):
+        self.assertEqual(column_encoder("BK", self.matrix), "AB")

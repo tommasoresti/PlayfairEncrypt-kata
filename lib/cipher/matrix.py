@@ -13,3 +13,10 @@ class Matrix:
 
     def letter(self, coords):
         return self.letters_matrix[coords[0]][coords[1]]
+
+    def column_len(self):
+        return len(self.letters_matrix)
+
+    def row_len(self):
+        return len(self.letters_matrix[0])
+
