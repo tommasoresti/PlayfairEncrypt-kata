@@ -1,9 +1,9 @@
 import sys
-from cipher import Cipher
+from cipher import SimpleCipher
 
 if len(sys.argv) != 2:
     print("No input string")
     exit()
 
-print(Cipher().encode(sys.argv[1]))
+print(SimpleCipher.encode(sys.argv[1]))
 

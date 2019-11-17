@@ -1,12 +1,12 @@
 from unittest import TestCase
 
-from cipher import Cipher
+from cipher import SimpleCipher
 
 
-class TestStringMethods(TestCase):
+class TestCipher(TestCase):
 
     def setUp(self):
-        self.cipher = Cipher()
+        self.cipher = SimpleCipher
 
     def test_same_case(self):
         self.assertEqual(self.cipher.encode("SS"), "SX")
