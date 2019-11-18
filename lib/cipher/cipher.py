@@ -29,7 +29,7 @@ class Cipher:
 
         result = ""
         for couple in couples:
-            result += (self.process(couple, self.encoders))
+            result += self.process(couple, self.encoders)
         return result
 
     def decode(self, input_value):
@@ -37,7 +37,7 @@ class Cipher:
 
         result = ""
         for couple in couples:
-            result += (self.process(couple, self.decoders))
+            result += self.process(couple, self.decoders)
         return result
 
     def process(self, couple, operations):
