@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from lib.cipher.case.column import column_checker, column_encoder
+from lib.cipher.case.column import same_column, shift_down, shift_up
 from lib.cipher.matrix import Matrix
 
 
@@ -14,11 +14,14 @@ class TestColumn(TestCase):
         ])
 
     def test_checker(self):
-        self.assertTrue(column_checker("BA", self.matrix))
-        self.assertFalse(column_checker("BR", self.matrix))
+        self.assertTrue(same_column("BA", self.matrix))
+        self.assertFalse(same_column("BR", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(column_encoder("BA", self.matrix), "AK")
+        self.assertEqual(shift_down("BA", self.matrix), "AK")
 
     def test_encoder_wrapping(self):
-        self.assertEqual(column_encoder("BK", self.matrix), "AB")
+        self.assertEqual(shift_down("BK", self.matrix), "AB")
+
+    def test_decoder(self):
+        self.assertEqual(shift_up("AK", self.matrix), "BA")

@@ -3,7 +3,11 @@ def rectangle_checker(couple, matrix):
            matrix.coords(couple[0])[1] != matrix.coords(couple[1])[1]
 
 
-def rectangle_encoder(couple, matrix):
+def rectangle_decoder(couple, matrix):
+    return swap_columns(couple, matrix)
+
+
+def swap_columns(couple, matrix):
     first, second = couple
 
     x1, y1 = matrix.coords(first)

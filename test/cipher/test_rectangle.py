@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.case.rectangle import rectangle_checker, rectangle_encoder
+from lib.cipher.case.rectangle import rectangle_checker, swap_columns, rectangle_decoder
 
 
 class TestRectangle(TestCase):
@@ -18,4 +18,7 @@ class TestRectangle(TestCase):
         self.assertFalse(rectangle_checker("BS", self.matrix))
 
     def test_encoder(self):
-        self.assertEqual(rectangle_encoder("BR", self.matrix), "SA")
+        self.assertEqual(swap_columns("BR", self.matrix), "SA")
+
+    def test_decoder(self):
+        self.assertEqual(rectangle_decoder("SA", self.matrix), "BR")
