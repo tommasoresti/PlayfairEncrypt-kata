@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.same import same_checker, same_encoder
+from lib.cipher.case.same import same_checker, same_encoder
 
 
 class TestSame(TestCase):

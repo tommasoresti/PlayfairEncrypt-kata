@@ -1,7 +1,6 @@
 import re
-import pprint as pp
 
-from lib.cipher.same import same_checker
+from lib.cipher.case.same import same_checker
 from lib.cipher.matrix import Matrix
 
 
@@ -20,11 +19,7 @@ def split_in_couples(input_value, output):
 class Cipher:
     def __init__(self, letters, encoders):
         self.encoders = encoders
-        self.encoders.insert(0, (same_checker, self.same_encode))
         self.matrix = Matrix(letters)
-
-    def same_encode(self, couple, matrix):
-        return self.encode_couple(couple[0] + 'X')
 
     def encode(self, input_value):
         input_value = str.upper(input_value)
@@ -38,7 +33,8 @@ class Cipher:
         return result
 
     def encode_couple(self, couple):
+        process = couple
         for case in self.encoders:
-            if case[0](couple, self.matrix):
-                return case[1](couple, self.matrix)
-        return ""
+            if case[0](process, self.matrix):
+                process = case[1](process, self.matrix)
+        return process

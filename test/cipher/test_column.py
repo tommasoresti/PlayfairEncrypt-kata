@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from lib.cipher import column_checker, column_encoder
+from lib.cipher.case.column import column_checker, column_encoder
 from lib.cipher.matrix import Matrix
 
 

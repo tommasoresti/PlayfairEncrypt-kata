@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.row import row_checker, row_encoder
+from lib.cipher.case.row import row_checker, row_encoder
 
 
 class TestRow(TestCase):

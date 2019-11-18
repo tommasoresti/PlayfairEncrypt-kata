@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.rectangle import rectangle_checker, rectangle_encoder
+from lib.cipher.case.rectangle import rectangle_checker, rectangle_encoder
 
 
 class TestRectangle(TestCase):
