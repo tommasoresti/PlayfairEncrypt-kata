@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from lib.cipher.case.column import same_column, shift_down, shift_up
+from lib.cipher.case.column import is_same_column, shift_down, shift_up
 from lib.cipher.matrix import Matrix
 
 
@@ -14,8 +14,8 @@ class TestColumn(TestCase):
         ])
 
     def test_checker(self):
-        self.assertTrue(same_column("BA", self.matrix))
-        self.assertFalse(same_column("BR", self.matrix))
+        self.assertTrue(is_same_column("BA", self.matrix))
+        self.assertFalse(is_same_column("BR", self.matrix))
 
     def test_encoder(self):
         self.assertEqual(shift_down("BA", self.matrix), "AK")

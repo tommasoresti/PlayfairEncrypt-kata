@@ -1,4 +1,4 @@
-def same_letter(couple, matrix):
+def is_same_letter(couple, matrix):
     return matrix.coords(couple[0]) == matrix.coords(couple[1])
 
 
@@ -6,7 +6,7 @@ def ends_with_X(couple, matrix):
     return matrix.coords(couple[0]) == matrix.coords(couple[1])
 
 
-def put_an_X(couple, matrix):
+def replace_second_with_X(couple, matrix):
     return couple[0] + 'X'
 
 

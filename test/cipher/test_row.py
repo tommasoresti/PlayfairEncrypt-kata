@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.case.row import same_row, shift_right, shift_left
+from lib.cipher.case.row import is_same_row, shift_right, shift_left
 
 
 class TestRow(TestCase):
@@ -13,8 +13,8 @@ class TestRow(TestCase):
         ])
 
     def test_checker(self):
-        self.assertTrue(same_row("BS", self.matrix))
-        self.assertFalse(same_row("BA", self.matrix))
+        self.assertTrue(is_same_row("BS", self.matrix))
+        self.assertFalse(is_same_row("BA", self.matrix))
 
     def test_encoder(self):
         self.assertEqual(shift_right("BS", self.matrix), "SV")

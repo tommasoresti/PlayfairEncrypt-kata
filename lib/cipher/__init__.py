@@ -1,9 +1,9 @@
-from lib.cipher.case.generic import for_all, is_not
-from lib.cipher.case.same import same_letter, put_an_X, duplicate_first, ends_with_X
+from lib.cipher.case.generic import all, nott
+from lib.cipher.case.same import is_same_letter, replace_second_with_X, duplicate_first, ends_with_X
 from lib.cipher.cipher import Cipher
-from lib.cipher.case.row import same_row, shift_right, shift_left
-from lib.cipher.case.rectangle import rectangle_checker, swap_columns
-from lib.cipher.case.column import same_column, shift_down, shift_up
+from lib.cipher.case.row import is_same_row, shift_right, shift_left
+from lib.cipher.case.rectangle import swap_columns
+from lib.cipher.case.column import is_same_column, shift_down, shift_up
 
 CIPHER = (["D", "A", "V", "I", "O"],
           ["Y", "N", "E", "R", "B"],
@@ -12,16 +12,16 @@ CIPHER = (["D", "A", "V", "I", "O"],
           ["T", "U", "W", "X", "Z"])
 
 encoders = [
-    (same_letter, put_an_X),
-    (for_all([is_not(same_letter), same_row]), shift_right),
-    (for_all([is_not(same_letter), same_column]), shift_down),
-    (rectangle_checker, swap_columns)
+    (is_same_letter, replace_second_with_X),
+    (all([nott(is_same_letter), is_same_row]), shift_right),
+    (all([nott(is_same_letter), is_same_column]), shift_down),
+    (all([nott(is_same_column), nott(is_same_row)]), swap_columns)
 ]
 
 decoders = [
-    (for_all([is_not(same_letter), same_row]), shift_left),
-    (for_all([is_not(same_letter), same_column]), shift_up),
-    (rectangle_checker, swap_columns),
+    (all([nott(is_same_letter), is_same_row]), shift_left),
+    (all([nott(is_same_letter), is_same_column]), shift_up),
+    (all([nott(is_same_column), nott(is_same_row)]), swap_columns),
     (ends_with_X, duplicate_first)
 ]
 

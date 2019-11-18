@@ -5,9 +5,9 @@ def _all_true(checkers, couple, matrix):
     return True
 
 
-def is_not(checker):
-    return lambda couple, matrix: not checker(couple, matrix)
-
-
-def for_all(checkers):
+def all(checkers):
     return lambda couple, matrix: _all_true(checkers, couple, matrix)
+
+
+def nott(checker):
+    return lambda couple, matrix: not checker(couple, matrix)

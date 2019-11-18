@@ -1,4 +1,4 @@
-def same_column(couple, matrix):
+def is_same_column(couple, matrix):
     return matrix.coords(couple[0])[1] == matrix.coords(couple[1])[1]
 
 
