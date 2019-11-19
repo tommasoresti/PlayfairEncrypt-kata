@@ -14,7 +14,7 @@ T U W X Z
 ```
 
 To fit the 26-letter alphabet into 25 letters, I and J are
-merged into one letter. When decrypting the message, it&39;s
+merged into one letter. When decrypting the message, it's
 relatively easy to tell from context whether a letter is
 meant to be an i or a j.
 
@@ -42,7 +42,7 @@ Looking at the message PS HE LL OW OR LD SX:
 - HE is the Rectangle case: H and E are in different rows
 and columns of the square.
 - LD is the Column case: L and D are in the same column.
-- LL is the Same case as it&39;s two of the same letter.
+- LL is the Same case as it's two of the same letter.
 
 For the Same case, we replace the second letter in the pair
 with X, and then proceed as normal. When decrypting, it
@@ -59,7 +59,7 @@ G is in the same row as H but the same column as E,
 
 and R is in the same row as E but the same column as
 H. For another example, CS would become KL: K is in
-C&39;s row but S&39;s column, and L is in C&39;s column but S&39;s
+C's row but S's column, and L is in C's column but S's
 row.
 - For the Row case, we pick the letter to the right of
 each letter, wrapping around the end of the row if we
@@ -95,7 +95,7 @@ pair with X (e.g. LL > LX).
 
 decrypt should, in turn, take as input a string and
 return the unencrypted version, just undoing the last
-step. You don&39;t need to worry about Js and Is, duplicate
+step. You don't need to worry about Js and Is, duplicate
 letters, or odd numbers of characters in decrypt.
 
 For example:
@@ -108,11 +108,11 @@ HINT: You might find it easier if you implement some
 helper functions, like a find_letter function that
 returns the row and column of a letter in the cipher.
 
-HINT 2: Once you&39;ve written encrypt, decrypt should
+HINT 2: Once you've written encrypt, decrypt should
 be trivial: try to think of how you can modify encrypt
 to serve as decrypt.
 
-To make this easier, we&39;ve gone ahead and created the
+To make this easier, we've gone ahead and created the
 cipher as a 2D tuple for you:
 
 ```
