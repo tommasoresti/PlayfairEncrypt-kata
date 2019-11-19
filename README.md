@@ -3,7 +3,11 @@
 ## Run
 
 ```
-python3 main.py <message>
+// To encode:
+python3 main.py -e <message>
+
+// To decode:
+python3 main.py -d <message>
 ```
 
 ## Test
