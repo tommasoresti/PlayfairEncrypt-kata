@@ -1,18 +1,14 @@
 import re
+import functools
 
 from lib.cipher.matrix import Matrix
 
 
-def split_in_couples(input_value, output):
-    if len(input_value) == 0:
-        return output
-
-    if len(input_value) == 1:
-        output.append(input_value + 'X')
-        return output
-
-    output.append(input_value[:2])
-    return split_in_couples(input_value[2:], output)
+def split_in_couples(input_value):
+    input_value = input_value + 'X' if len(input_value) % 2 == 1 else input_value
+    chunksize = 2
+    for pos in range(0, len(input_value), chunksize):
+        yield input_value[pos:pos + chunksize]
 
 
 class Cipher:
@@ -25,20 +21,14 @@ class Cipher:
         input_value = str.upper(input_value)
         input_value = re.sub(r'[^A-Z]+', "", input_value)
 
-        couples = split_in_couples(input_value, [])
-
-        result = ""
-        for couple in couples:
-            result += self.process(couple, self.encoders)
-        return result
+        return functools.reduce(
+            lambda accumulator, couple: accumulator + self.process(couple, self.encoders),
+            split_in_couples(input_value), "")
 
     def decode(self, input_value):
-        couples = split_in_couples(input_value, [])
-
-        result = ""
-        for couple in couples:
-            result += self.process(couple, self.decoders)
-        return result
+        return functools.reduce(
+            lambda accumulator, couple: accumulator + self.process(couple, self.decoders),
+            split_in_couples(input_value), "")
 
     def process(self, couple, operations):
         process = couple
