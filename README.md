@@ -1,3 +1,24 @@
+# Playfair cipher
+
+## Run
+
+```
+python3 main.py <message>
+```
+
+## Test
+```
+nosetests --verbosity=2
+```
+
+or
+
+```
+python3 -m unittest discover
+```
+
+# Problem
+
 One of the early common methods for encrypting text was the
 Playfair cipher. You can read more about the Playfair cipher
 here: https://en.wikipedia.org/wiki/Playfair_cipher
