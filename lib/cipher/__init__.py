@@ -1,5 +1,6 @@
-from lib.cipher.case.generic import all, nott
-from lib.cipher.case.same import is_same_letter, replace_second_with_X, duplicate_first, ends_with_X
+from lib.cipher.case.generic import all, nott, always
+from lib.cipher.case.letters import is_same_letter, replace_second_with_X, duplicate_first, ends_with_X, \
+    replace_j_with_i
 from lib.cipher.cipher import Cipher
 from lib.cipher.case.row import is_same_row, shift_right, shift_left
 from lib.cipher.case.rectangle import swap_columns
@@ -12,6 +13,7 @@ CIPHER = (["D", "A", "V", "I", "O"],
           ["T", "U", "W", "X", "Z"])
 
 encoders = [
+    (always, replace_j_with_i),
     (is_same_letter, replace_second_with_X),
     (all([nott(is_same_letter), is_same_row]), shift_right),
     (all([nott(is_same_letter), is_same_column]), shift_down),

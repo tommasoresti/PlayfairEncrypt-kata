@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from lib.cipher.matrix import Matrix
-from lib.cipher.case.same import is_same_letter, replace_second_with_X
+from lib.cipher.case.letters import is_same_letter, replace_second_with_X
 
 
 class TestSame(TestCase):

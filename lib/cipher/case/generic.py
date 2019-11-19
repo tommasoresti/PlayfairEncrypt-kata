@@ -5,6 +5,10 @@ def _all_true(checkers, couple, matrix):
     return True
 
 
+def always(couple, matrix):
+    return True
+
+
 def all(checkers):
     return lambda couple, matrix: _all_true(checkers, couple, matrix)
 
